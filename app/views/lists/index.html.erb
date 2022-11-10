@@ -1,7 +1,20 @@
-<h1>Lists</h1>
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
-<p><%= link_to "add new list", new_list_path %></p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <%= image_tag "logo.png", alt: "Le Wagon", width: 200 %>
+    <%= link_to "add new list", new_list_path, class: 'btn btn-danger mt-3'%>
+  </div>
+</nav>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.justwatch.com/images/backdrop/207404040/s640/moana);">
+  <div class="container">
+    <h1>My lists</h1>
+  </div>
+</div>
+<div class="container mt-3">
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <p><%= link_to list.name, list_path(list) %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
