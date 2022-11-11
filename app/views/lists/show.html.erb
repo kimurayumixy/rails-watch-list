@@ -13,7 +13,7 @@
     </div>
   </div>
 </div>
-<div class="container mt-3">
+<div class="container mt-3 mb-3">
   <h2>movies & reviews</h2>
   <% @list.bookmarks.each do |bookmark| %>
     <div class="card-product mt-3">
@@ -27,7 +27,9 @@
       </div>
     </div>
   <% end %>
-  <p><%= link_to lists_path do %></p>
-    <i class="fa-solid fa-arrow-left"></i>
-  <% end %>
+  <div class="go-back-icon">
+    <p><%= link_to lists_path do %></p>
+      <i class="fa-solid fa-arrow-left fa-2x"></i>
+    <% end %>
+  </div>
 </div>
