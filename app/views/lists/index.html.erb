@@ -1,9 +1,3 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <%= image_tag "logo.png", alt: "Le Wagon", width: 200 %>
-    <%= link_to "add new list", new_list_path, class: 'btn btn-danger mt-3'%>
-  </div>
-</nav>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.justwatch.com/images/backdrop/207404040/s640/moana);">
   <div class="container">
     <h1>My lists</h1>
@@ -12,11 +6,11 @@
 <div class="container mt-3 mb-3">
   <div class="cards">
     <% @lists.each do |list| %>
-      <div class="item card-category"
-        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>)"
-        data-controller="card"
-        data-action="click->card#biggerCard"
-        <p><%= link_to list.name, list_path(list) %></p>
+      <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>)">
+        <ul>
+          <li><%= link_to list.name, list_path(list) %></li>
+          <li><%= list.user.username %></li>
+        </ul>
       </div>
     <% end %>
   </div>

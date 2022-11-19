@@ -23,25 +23,3 @@ response['results'].each do |movie_hash|
     rating: movie_hash["vote_average"]
   )
 end
-
-List.destroy_all
-
-List.create!(
-  name: "action"
-)
-
-List.create!(
-  name: "comedy"
-)
-
-List.create!(
-  name: "horror"
-)
-
-List.create!(
-  name: "Taiwanese"
-)
-
-List.create!(
-  name: "Love story"
-)
