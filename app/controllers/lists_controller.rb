@@ -1,15 +1,17 @@
 class ListsController < ApplicationController
   def index
-    @lists = List.all
+    @lists = policy_scope(List)
   end
 
   def new
     @list = List.new
+    authorize @list
   end
 
   def create
     @list = List.new(list_params)
     @list.user = current_user
+    authorize @list
     if @list.save
       redirect_to list_path(@list)
     else
@@ -19,6 +21,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    authorize @list
   end
 
   private
