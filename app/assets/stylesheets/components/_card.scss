@@ -17,6 +17,10 @@
   }
 }
 
+li {
+  list-style:none;
+}
+
 .card-category:hover {
   transition: .5s;
   transform: scale(1.1);
